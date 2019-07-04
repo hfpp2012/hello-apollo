@@ -1,15 +1,15 @@
-import React from 'react';
-import './App.css';
-import logo from './logo.png';
+import React from "react";
+import "./App.css";
+import logo from "./logo.png";
 
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import Launches from './components/Launches';
-import Launch from './components/Launch';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Launches from "./components/Launches";
+import Launch from "./components/Launch";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql"
+  uri: "/graphql"
 });
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
             alt="Spacex"
             style={{ width: 300, display: "block", margin: "auto" }}
           />
-          <Route exact path="/" component={ Launches } />
-          <Route exact path="/launch/:flight_number" component={ Launch } />
+          <Route exact path="/" component={Launches} />
+          <Route exact path="/launch/:flight_number" component={Launch} />
         </div>
       </Router>
     </ApolloProvider>
